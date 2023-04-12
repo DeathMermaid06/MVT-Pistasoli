@@ -16,11 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from MVT.views import *
+from AppMVT.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('saludos/', saludo),
     path('saludos_inp/<nombre>', saludo_nombre),
     path('probandohtmlloader/', probandohtmlloader),
+    path('cliente/', cliente),
+    path('pedido/', pedido),
+    path('factura/', factura),
+    path('', inicio),
 ]
 
