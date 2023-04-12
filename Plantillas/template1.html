@@ -10,5 +10,21 @@
     <h1>header1</h1>
     <p>este es un parrafo</p>
 
+    <p style="color:crimson">Nombre= {{ Nombre }}</p>
+    <p>{{ Apellido }}</p>
+    <p>{{ Edad }}</p>
+
+    <p>lista de notas= {{ lista }}</p>
+
+    <ul>
+        {% for nota in lista %}
+            {% if nota > 5 %}
+            <li style="color: green;"> nota aprobada: {{ nota }} </li>
+            {% else %}
+            <li style="color: red;"> nota reprobada: {{ nota }} </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
 </body>
 </html>

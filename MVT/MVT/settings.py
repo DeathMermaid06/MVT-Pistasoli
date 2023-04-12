@@ -54,7 +54,7 @@ ROOT_URLCONF = 'MVT.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["/Users/marie/Documents/GitHub/MVTPistasoli/Plantillas"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
