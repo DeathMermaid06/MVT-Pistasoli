@@ -1,7 +1,4 @@
 from django.shortcuts import render
-from .models import cliente, pedido, factura
-from django.http import HttpResponse
-
 
 # Create your views here.
 

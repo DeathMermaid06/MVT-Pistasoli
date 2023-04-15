@@ -23,9 +23,5 @@ urlpatterns = [
     path('saludos/', saludo),
     path('saludos_inp/<nombre>', saludo_nombre),
     path('probandohtmlloader/', probandohtmlloader),
-    path('cliente/', cliente),
-    path('pedido/', pedido),
-    path('factura/', factura),
-    path('', inicio),
 ]
 
