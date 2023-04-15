@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import cliente, pedido, factura
 
 
 # Create your views here.
@@ -10,12 +11,14 @@ def inicioApp(request):
 def inicio(request):
     return (HttpResponse("inicioApp"))
 
-def cliente(request):
-    return render(request, ("AppMVT/cliente.html"))
+def clientes(request):
+    clientes = cliente.objects.all()
+    context= {"clientes": clientes}
+    return render(request, ("AppMVT/cliente.html"), context)
 
-def pedido(request):
+def pedidos(request):
     return render(request, ("AppMVT/pedido.html"))
 
-def factura(request):
+def facturas(request):
     return render(request, ("AppMVT/factura.html"))
 
