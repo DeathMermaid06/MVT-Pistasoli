@@ -4,15 +4,18 @@ from django.shortcuts import render
 
 # Create your views here.
 
+def inicioApp(request):
+    return render(request, ("AppMVT/inicio.html"))
+
 def inicio(request):
-    return (HttpResponse("inicio"))
+    return (HttpResponse("inicioApp"))
 
 def cliente(request):
-    return (HttpResponse ("Cliente"))
+    return render(request, ("AppMVT/cliente.html"))
 
 def pedido(request):
-    return (HttpResponse ("Pedido"))
+    return render(request, ("AppMVT/pedido.html"))
 
 def factura(request):
-    return (HttpResponse ("Factura"))
+    return render(request, ("AppMVT/factura.html"))
 
