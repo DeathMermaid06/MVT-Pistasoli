@@ -1,16 +1,18 @@
+from django.http import HttpResponse
 from django.shortcuts import render
+
 
 # Create your views here.
 
 def inicio(request):
-    HttpResponse("inicio")
+    return (HttpResponse("inicio"))
 
 def cliente(request):
-    return HttpResponse ("Cliente")
+    return (HttpResponse ("Cliente"))
 
 def pedido(request):
-    return HttpResponse ("Pedido")
+    return (HttpResponse ("Pedido"))
 
 def factura(request):
-    return HttpResponse ("Factura")
+    return (HttpResponse ("Factura"))
 
