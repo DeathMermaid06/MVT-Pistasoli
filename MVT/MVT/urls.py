@@ -22,5 +22,9 @@ urlpatterns = [
     path('saludos/', saludo),
     path('saludos_inp/<nombre>', saludo_nombre),
     path('probandohtmlloader/', probandohtmlloader),
+    path('', inicio),
+    path('cliente/', cliente),
+    path('factura/', factura),
+    path('pedido/', pedido),
 ]
 
