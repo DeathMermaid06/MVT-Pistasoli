@@ -12,6 +12,18 @@ def inicioApp(request):
 def inicio(request):
     return (HttpResponse("inicioApp"))
 
+def buscar(request):
+    return render(request, ("AppMVT/buscar.html"))
+
+def buscando(request):
+    b_sabor=request.GET["sabor"]
+    if b_sabor!="":
+        pedidos=Pedido.objects.filter(sabor__icontains=b_sabor)
+        print(pedidos)
+        return render(request, "AppMVT/buscando.html", {"pedidos": pedidos})
+    else:
+       return render(request, ("AppMVT/buscar.html"))
+
 def clientes(request):
     if request.method == "POST":
         form = ClienteForm(request.POST)
