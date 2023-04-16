@@ -8,4 +8,41 @@
 
 {% block formulario_titulo %}
 <h1>Listado Facturas</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="AGREGAR">
+
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>IDCliente</th>
+            <th>Monto</th>
+            <th>Liquidado</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for factura in facturas %}
+        <tr>
+            <td>
+                {{ factura.idCliente }}
+            </td>
+            <td>
+                {{ factura.monto }}
+            </td>
+            <td>
+                {{ factura.liquidado }}
+            </td>
+            <td>
+                {{ factura.fecha }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
 {% endblock %}
