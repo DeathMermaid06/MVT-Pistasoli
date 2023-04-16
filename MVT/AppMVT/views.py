@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import cliente, pedido, factura
+from .models import Cliente, Pedido, Factura
+from .forms import ClienteForm
 
 
 # Create your views here.
@@ -12,8 +13,19 @@ def inicio(request):
     return (HttpResponse("inicioApp"))
 
 def clientes(request):
-    clientes = cliente.objects.all()
-    context= {"clientes": clientes}
+    if request.method == "POST":
+        form = ClienteForm(request.POST)
+        if form.is_valid():
+            cliente = Cliente()
+            cliente.nombre = form.cleaned_data["nombre"]
+            cliente.apellido = form.cleaned_data["apellido"]
+            cliente.telefono = form.cleaned_data["telefono"]
+            cliente.save()
+    else:
+       form = ClienteForm() 
+
+    clientes = Cliente.objects.all()
+    context= {"clientes": clientes, "form": form}
     return render(request, ("AppMVT/cliente.html"), context)
 
 def pedidos(request):
